@@ -21,6 +21,8 @@ from django.conf import settings
 
 from Video.views import student_videos,teacher_videos,upload_video,Home,teacher,student
 from Homework.views import student_homework,teacher_homework,upload_homework,upload_answer,view_answer
+from login.views import loginview_teach,loginview_stu
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Home,name='Home'),
@@ -34,4 +36,6 @@ urlpatterns = [
     path('teacher/homework/',teacher_homework, name='teacher_homework'),
     path('teacher/homework/upload/',upload_homework,name='upload_homework'),
     path('teacher/homework/<str:hw_title>/',view_answer,name='view_answer'),
+    path('teacher/login/', loginview_teach,name='teacher_login'),
+    path('student/login/', loginview_stu, name='student_login'),
               ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
