@@ -1,0 +1,4 @@
+<a href="{% url 'upload_video' %}">upload</a>
+{% for v in video %}
+    <h4><a href="{{v.VideoFile.url}}">{{ v.Title }}</a></h4>
+{% endfor %}

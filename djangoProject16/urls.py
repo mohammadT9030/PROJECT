@@ -16,6 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from django.conf.urls.static import static
+from django.conf import settings
+
+from Video.views import student_videos,teacher_videos,upload_video,Home,teacher,student
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+    path('', Home,name='Home'),
+    path('student/',student, name='student'),
+    path('student/videos/', student_videos, name='student_videos'),
+    path('teacher/', teacher, name='teacher'),
+    path('teacher/videos/', teacher_videos, name='teacher_videos'),
+    path('teacher/videos/upload/',upload_video,name='upload_video'),
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
