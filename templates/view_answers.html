@@ -1,0 +1,8 @@
+{% for answer in answers %}
+    <ul>
+        <li>{{ answer.student_number }}</li>
+        <li>{{ answer.last_post_time }}</li>
+        <li><a href="{{answer.File.url}}">{{answer.File}}</a></li>
+        <li>{{ answer.score }}</li>
+    </ul>
+{% endfor %}

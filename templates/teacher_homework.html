@@ -1,0 +1,6 @@
+<a href="{% url 'upload_homework' %}">upload homework</a>
+{% for h in hw %}
+    <ul>
+        <li><a href="{% url 'view_answer' h.Title %}">{{ h }}</a></li>
+    </ul>
+{% endfor %}

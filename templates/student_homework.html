@@ -1,0 +1,22 @@
+{% for h in hw %}
+
+    <ul>
+        <li><a href="{{h.HWFile.url}}">{{ h }}</a></li>
+        {% for a in answer %}
+            {% if h.Title == a.Title_homework %}
+                <li>{{ a.last_post_time }}</li>
+
+            {% endif %}
+
+        {% endfor %}
+        <li><a href="{% url 'upload_answer' %}">upload answer</a></li>
+            {% for a in answer %}
+            {% if h.Title == a.Title_homework %}
+                <li>{{ a.score }}</li>
+
+            {% endif %}
+
+        {% endfor %}
+    </ul>
+
+{% endfor %}

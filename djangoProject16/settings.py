@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Video.apps.VideoConfig',
+    'Homework.apps.HomeworkConfig'
 ]
 
 MIDDLEWARE = [
